@@ -7,7 +7,7 @@ const db = require("./database/db");
 app.use(cors());
 
 app.use(express.json());
-
+app.use()
 const PORT = 5000;
 
 app.listen(PORT, () => {
