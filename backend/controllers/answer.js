@@ -1,5 +1,5 @@
-const answersModel = require("../db/models/answers");
-const questionsModel = require("../db/models/questions");
+const answersModel = require("../database/models/answerSchema");
+const questionsModel = require("../database/models/questionSchema");
 
 // This function creates a new answer for a specific question
 const createNewanswer = (req, res) => {
@@ -17,7 +17,7 @@ const createNewanswer = (req, res) => {
         .then(() => {
           res.status(201).json({
             success: true,
-            message: `The new answer added`,
+            message: `The new answer was added`,
             answer: result,
           });
         })

@@ -11,8 +11,8 @@ const {
   deleteQuestionsByAuthor,
 } = require("../controllers/questions");
 
-// Import comments controller
-const { createNewComment } = require("./../controllers/comments");
+// Import answers controller
+const { newanswer } = require("../controllers/answer");
 
 // Middleware
 const authentication = require("../middleware/authentication");

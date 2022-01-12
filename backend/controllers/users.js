@@ -13,21 +13,24 @@ const createUser = (req, res) => {
   user
     .save()
     .then((result) => {
-      let sucessMessage = {
-        success: "true",
-        message: "Success Author Added",
+      res.status(201).json({
+        success: true,
+        message: `Success Author Added`,
         author: result,
-      };
-      res.status(200);
-      res.json(sucessMessage);
+      });
     })
     .catch((err) => {
-      let errorMessage = {
-        success: "false",
-        message: "The email already exists",
-      };
-      res.status(409);
-      res.json(errorMessage);
+      if (err.keyPattern) {
+        return res.status(409).json({
+          success: false,
+          message: `The email already exists`,
+        });
+      }
+      res.status(500).json({
+        success: false,
+        message: `Server Error`,
+        err: err,
+      });
     });
 };
 
