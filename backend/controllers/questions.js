@@ -1,11 +1,11 @@
 const questionModel = require("../database/models/questionSchema");
 
 // This function returns the questions
-const getAllQuestions = (req, res) => {
+const getAllquestions = (req, res) => {
   const userId = req.token.userId;
-  questionsModel
+  questionModel
     .find({})
-    .populate("comments")
+    .populate("questions")
     .then((questions) => {
       if (questions.length) {
         res.status(200).json({
@@ -13,7 +13,7 @@ const getAllQuestions = (req, res) => {
           message: `All the questions`,
           userId: userId,
           questions: questions,
-          comments: questions.comments,
+          questions: questions.questions,
         });
       } else {
         res.status(200).json({
@@ -34,7 +34,7 @@ const getAllQuestions = (req, res) => {
 const getquestionsByAuthor = (req, res) => {
   let authorName = req.query.author;
 
-  questionsModel
+  questionModel
     .find({ author: authorName })
     .then((questions) => {
       if (!questions.length) {
@@ -60,7 +60,7 @@ const getquestionsByAuthor = (req, res) => {
 // This function returns question by its id
 const getquestionById = (req, res) => {
   let id = req.query.id;
-  questionsModel
+  questionModel
     .findById(id)
     .populate("author", "firstName -_id")
     .exec()
@@ -88,7 +88,7 @@ const getquestionById = (req, res) => {
 // This function creates new question
 const createNewquestion = (req, res) => {
   const { title, description } = req.body;
-  const newquestion = new questionsModel({
+  const newquestion = new questionModel({
     title,
     description,
     author: req.token.userId,
@@ -115,7 +115,7 @@ const createNewquestion = (req, res) => {
 const updatequestionById = (req, res) => {
   const _id = req.params.id;
 
-  questionsModel
+  questionModel
     .findByIdAndUpdate(_id, req.body, { new: true })
     .then((result) => {
       if (!result) {
@@ -141,7 +141,7 @@ const updatequestionById = (req, res) => {
 // This function deletes a specific question by its id
 const deletequestionById = (req, res) => {
   const id = req.params.id;
-  questionsModel
+  questionModel
     .findByIdAndDelete(id)
     .then((result) => {
       if (!result) {
@@ -167,7 +167,7 @@ const deletequestionById = (req, res) => {
 const deletequestionsByAuthor = (req, res) => {
   const author = req.body.author;
 
-  questionsModel
+  questionModel
     .deleteMany({ author })
     .then((result) => {
       if (!result.deletedCount) {
