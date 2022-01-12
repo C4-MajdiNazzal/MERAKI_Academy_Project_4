@@ -1,24 +1,24 @@
-const commentsModel = require("../db/models/comments");
-const articlesModel = require("../db/models/articles");
+const answersModel = require("../db/models/answers");
+const questionsModel = require("../db/models/questions");
 
-// This function creates a new comment for a specific article
-const createNewComment = (req, res) => {
-  const articleId = req.params.id;
-  const { comment } = req.body;
-  const newComment = new commentsModel({
-    comment,
-    commenter: req.token.userId,
+// This function creates a new answer for a specific question
+const createNewanswer = (req, res) => {
+  const questionId = req.params.id;
+  const { answer } = req.body;
+  const newanswer = new answersModel({
+    answer,
+    answerer: req.token.userId,
   });
-  newComment
+  newanswer
     .save()
     .then((result) => {
-      articlesModel
-        .updateOne({ _id: articleId }, { $push: { comments: result._id } })
+      questionsModel
+        .updateOne({ _id: questionId }, { $push: { answers: result._id } })
         .then(() => {
           res.status(201).json({
             success: true,
-            message: `The new comment added`,
-            comment: result,
+            message: `The new answer added`,
+            answer: result,
           });
         })
         .catch((err) => {
@@ -37,5 +37,5 @@ const createNewComment = (req, res) => {
 };
 
 module.exports = {
-  createNewComment,
+  createNewanswer,
 };
