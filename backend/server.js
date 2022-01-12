@@ -10,7 +10,7 @@ const PORT = 5000;
 const questionsRouter = require("./routes/questions") ;
 const usersRouter = require("./routes/users") ;
 const loginRouter = require("./routes/login") ;
-const rolesRouter = require("./routes/roles");
+const rolesRouter = require("./routes/roles") ;
 
 app.use(cors());
 app.use(express.json());
