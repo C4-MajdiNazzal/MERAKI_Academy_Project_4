@@ -1,7 +1,7 @@
 const mongoose = require("mongoose") ;
 
 const answerSchema = new mongoose.Schema({
-  answer: { type: String },
+  answer: { type: String } ,
   student: { type: mongoose.Types.ObjectId, ref: "User" } ,
 });
 
