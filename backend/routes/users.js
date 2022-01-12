@@ -2,7 +2,7 @@ const express = require("express");
 const { createNewUser } = require("../controllers/users");
 
 // define router
-const usersRouter = express.Router();
+const usersRouter = express.Router() ;
 
 
 
