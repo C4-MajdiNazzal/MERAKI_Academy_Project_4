@@ -7,7 +7,7 @@ const authorization = (string) => {
           message: `Unauthorized` ,
         });
       }
-      next();
+      next() ;
     };
   };
   
