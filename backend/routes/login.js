@@ -1,7 +1,7 @@
 const express = require("express");
 
 // Import login controller
-const { login } = require("../controllers/login");
+const { login } = require("../controllers/login") ;
 
 // Create login router
 const loginRouter = express.Router();
