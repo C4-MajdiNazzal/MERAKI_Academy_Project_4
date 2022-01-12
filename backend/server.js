@@ -13,7 +13,7 @@ const loginRouter = require("./routes/login") ;
 const rolesRouter = require("./routes/roles") ;
 
 app.use(cors());
-app.use(express.json());
+app.use(express.json()) ;
 
 // Routes Middleware
 app.use("/questions", questionsRouter);
