@@ -174,7 +174,7 @@ const deleteQuestionsByAuthor = (req, res) => {
     .then((result) => {
       if (!result.deletedCount) {
         return res.status(404).json({
-          success: false,
+          success: false ,
           message: `The Author not found`,
         });
       }
