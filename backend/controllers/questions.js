@@ -102,7 +102,7 @@ const createNewQuestion = (req, res) => {
       res.status(201).json({
         success: true,
         message: `question created`,
-        question: question,
+        question: question ,
       });
     })
     .catch((err) => {
