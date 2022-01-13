@@ -93,7 +93,7 @@ const createNewQuestion = (req, res) => {
   const newquestion = new questionModel({
     title,
     description,
-    author: req.token.userId,
+    author: req.token.userId ,
   });
 
   newquestion
