@@ -9,7 +9,7 @@ const createNewRole = (req, res) => {
     .then((result) => {
       res.status(201).json({
         success: true,
-        message: `Role created`,
+        message: `Role is created`,
         role: result,
       });
     })
