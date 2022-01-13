@@ -1,7 +1,7 @@
 const questionModel = require("../database/models/questionSchema");
 
 // This function returns the questions
-const getAllquestions = (req, res) => {
+const getAllQuestions = (req, res) => {
   const userId = req.token.userId;
   questionModel
     .find({})
@@ -23,15 +23,17 @@ const getAllquestions = (req, res) => {
       }
     })
     .catch((err) => {
+      console.log(err);
       res.status(500).json({
         success: false,
         message: `Server Error`,
+       
       });
     });
 };
 
 //This function returns questions by author
-const getquestionsByAuthor = (req, res) => {
+const getQuestionsByAuthor = (req, res) => {
   let authorName = req.query.author;
 
   questionModel
@@ -58,7 +60,7 @@ const getquestionsByAuthor = (req, res) => {
 };
 
 // This function returns question by its id
-const getquestionById = (req, res) => {
+const getQuestionById = (req, res) => {
   let id = req.query.id;
   questionModel
     .findById(id)
@@ -86,7 +88,7 @@ const getquestionById = (req, res) => {
 };
 
 // This function creates new question
-const createNewquestion = (req, res) => {
+const createNewQuestion = (req, res) => {
   const { title, description } = req.body;
   const newquestion = new questionModel({
     title,
@@ -112,7 +114,7 @@ const createNewquestion = (req, res) => {
 };
 
 // This function updates question by its id
-const updatequestionById = (req, res) => {
+const updateQuestionById = (req, res) => {
   const _id = req.params.id;
 
   questionModel
@@ -139,7 +141,7 @@ const updatequestionById = (req, res) => {
 };
 
 // This function deletes a specific question by its id
-const deletequestionById = (req, res) => {
+const deleteQuestionById = (req, res) => {
   const id = req.params.id;
   questionModel
     .findByIdAndDelete(id)
@@ -164,7 +166,7 @@ const deletequestionById = (req, res) => {
 };
 
 // This function deletes all the questions for a specific author
-const deletequestionsByAuthor = (req, res) => {
+const deleteQuestionsByAuthor = (req, res) => {
   const author = req.body.author;
 
   questionModel
@@ -191,11 +193,11 @@ const deletequestionsByAuthor = (req, res) => {
 };
 
 module.exports = {
-  getAllquestions,
-  getquestionsByAuthor,
-  getquestionById,
-  createNewquestion,
-  updatequestionById,
-  deletequestionById,
-  deletequestionsByAuthor,
+  getAllQuestions,
+  getQuestionsByAuthor,
+  getQuestionById,
+  createNewQuestion,
+  updateQuestionById,
+  deleteQuestionById,
+  deleteQuestionsByAuthor,
 };

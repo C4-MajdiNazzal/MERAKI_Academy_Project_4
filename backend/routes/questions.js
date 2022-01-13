@@ -35,7 +35,7 @@ questionsRouter.post(
   "/:id/comments",
   authentication,
   authorization("CREATE_COMMENTS"),
-  createNewComment
+  createNewQuestion,
 );
 
 module.exports = questionsRouter;
