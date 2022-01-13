@@ -129,7 +129,7 @@ const updateQuestionById = (req, res) => {
       res.status(202).json({
         success: true,
         message: `question updated`,
-        question: result,
+        question: result ,
       });
     })
     .catch((err) => {
