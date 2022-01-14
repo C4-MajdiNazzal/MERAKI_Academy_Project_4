@@ -1,12 +1,12 @@
 const jwt = require("jsonwebtoken");
 
-// This function checks if the user logged in 
+// This function checks if the user logged in
 const authentication = (req, res, next) => {
   try {
     if (!req.headers.authorization) {
       return res.status(403).json({
         success: false,
-        message: `Forbidden not authorized`,
+        message: `Forbidden user not authorized`,
       });
     }
     const token = req.headers.authorization.split(" ").pop();
