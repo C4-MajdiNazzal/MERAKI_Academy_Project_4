@@ -33,7 +33,7 @@ questionsRouter.delete("/", deleteQuestionsByAuthor);
 
 questionsRouter.post(
   "/:id/comments",
-  authentication,
+  authentication ,
   authorization("CREATE_COMMENTS"),
   createNewQuestion,
 );
