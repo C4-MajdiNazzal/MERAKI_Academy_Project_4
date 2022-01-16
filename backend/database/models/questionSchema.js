@@ -5,7 +5,7 @@ const questionSchema = new mongoose.Schema({
   category: { type: String },
   question: { type: String },
   teacher: { type: mongoose.Types.ObjectId, ref:"User" },
-  answers: {type: mongoose.Types.ObjectId, ref:"Answer"}
+  answers: [{type: mongoose.Types.ObjectId, ref:"Answer"}]
 });
 
 module.exports = mongoose.model("question", questionSchema);

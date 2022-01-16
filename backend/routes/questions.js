@@ -12,7 +12,7 @@ const {
 } = require("../controllers/questions");
 
 // Import answers controller
-const { createNewAnswer } = require("../controllers/answer");
+const { newanswer } = require("../controllers/answer");
 
 // Middleware
 const authentication = require("../middleware/authentication");
@@ -35,7 +35,7 @@ questionsRouter.post(
   "/:id/comments",
   authentication ,
   authorization("CREATE_COMMENTS"),
-  createNewAnswer,
+  createNewQuestion,
 );
 
 module.exports = questionsRouter;
