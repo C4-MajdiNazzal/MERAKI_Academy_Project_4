@@ -2,8 +2,8 @@ const RoleModel = require("../database/models/roleSchema");
 
 // This function creates new role
 const createNewRole = (req, res) => {
-  const { role, permissions } = req.body;
-  const newRole = new RoleModel({ role, permissions });
+  const { role } = req.body;
+  const newRole = new RoleModel({ role });
   newRole
     .save()
     .then((result) => {
