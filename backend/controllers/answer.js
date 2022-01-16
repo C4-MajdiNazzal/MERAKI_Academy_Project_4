@@ -1,13 +1,14 @@
 const answersModel = require("../database/models/answerSchema");
 const questionsModel = require("../database/models/questionSchema");
 
+
 // This function creates a new answer for a specific question
 const createNewanswer = (req, res) => {
   const questionId = req.params.id;
   const { Answer } = req.body;
   const newanswer = new answersModel({
     Answer,
-    student: req.token.userId,
+    // student: req.token.userId,
   });
   newanswer
     .save()
