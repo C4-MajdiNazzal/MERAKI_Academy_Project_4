@@ -10,7 +10,6 @@ import { AuthContext } from "../context/auth";
 const Login = () => {
   const { setIsLoggedIn, isLoggedIn, saveToken } = useContext(AuthContext);
   const history = useNavigate();
-
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [password, setPassword] = useState("");

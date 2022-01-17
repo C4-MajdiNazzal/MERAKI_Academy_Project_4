@@ -8,10 +8,8 @@ import { AuthContext } from "./../context/auth";
 
 const Register = () => {
   const { isLoggedIn } = useContext(AuthContext);
-
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const role = "61d1b62b43d7475f3dcd2a6d";
@@ -26,7 +24,6 @@ const Register = () => {
       const result = await axios.post("http://localhost:5000/users", {
         firstName,
         lastName,
-
         email,
         password,
         role,
