@@ -11,8 +11,7 @@ const Register = () => {
 
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [age, setAge] = useState(0);
-  const [country, setCountry] = useState("");
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const role = "61d1b62b43d7475f3dcd2a6d";
@@ -27,8 +26,7 @@ const Register = () => {
       const result = await axios.post("http://localhost:5000/users", {
         firstName,
         lastName,
-        age,
-        country,
+
         email,
         password,
         role,
@@ -68,18 +66,8 @@ const Register = () => {
                 onChange={(e) => setLastName(e.target.value)}
               />
               <br />
-              <input
-                type="number"
-                placeholder="Age"
-                onChange={(e) => setAge(e.target.value)}
-              />
-              <br />
-              <input
-                type="text"
-                placeholder="Country"
-                onChange={(e) => setCountry(e.target.value)}
-              />
-              <br />
+
+           
               <input
                 type="email"
                 placeholder="Email"
