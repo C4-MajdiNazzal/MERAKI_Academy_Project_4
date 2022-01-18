@@ -18,7 +18,7 @@ const getAllQuestions = (req, res) => {
       } else {
         res.status(200).json({
           success: false,
-          message: `No questions Yet`,
+          message: `No questions Yet` ,
         });
       }
     })
