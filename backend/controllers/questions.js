@@ -89,10 +89,11 @@ const getQuestionById = (req, res) => {
 
 // This function creates new question
 const createNewQuestion = (req, res) => {
-  const { title, description } = req.body;
+  const { title, category, question, teacher, answers } = req.body;
   const newquestion = new questionModel({
     title,
-    description ,
+    category,
+    
     author: req.token.userId ,
   });
 
