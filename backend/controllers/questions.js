@@ -93,8 +93,8 @@ const createNewQuestion = (req, res) => {
   const newquestion = new questionModel({
     title,
     category,
-    
-    author: req.token.userId ,
+    question,
+    teacher: req.token.userId ,
   });
 
   newquestion
@@ -102,7 +102,7 @@ const createNewQuestion = (req, res) => {
     .then((question) => {
       res.status(201).json({
         success: true,
-        message: `question created`,
+        message: `question created` ,
         question: question ,
       });
     })
