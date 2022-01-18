@@ -13,7 +13,7 @@ const getAllQuestions = (req, res) => {
           message: `All the questions`,
           userId: userId,
           questions: questions,
-          questions: questions.questions,
+          questions: questions.questions ,
         });
       } else {
         res.status(200).json({
