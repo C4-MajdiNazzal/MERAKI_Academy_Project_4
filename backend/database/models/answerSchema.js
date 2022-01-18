@@ -5,4 +5,4 @@ const answerSchema = new mongoose.Schema({
   student: { type: mongoose.Types.ObjectId, ref: "User" } ,
 });
 
-module.exports = mongoose.model("Answer", answerSchema);
+module.exports = mongoose.model("answer", answerSchema);
