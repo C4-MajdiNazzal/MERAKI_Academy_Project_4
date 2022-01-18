@@ -15,7 +15,7 @@ const createUser = (req, res) => {
     .then((result) => {
       res.status(201).json({
         success: true,
-        message: `Success Author Added`,
+        message: `Success user Added`,
         author: result,
       });
     })

@@ -37,12 +37,12 @@ const getQuestionsByAuthor = (req, res) => {
   let authorName = req.query.author;
 
   questionModel
-    .find({ author: authorName })
+    .find({ teacher: firstName })
     .then((questions) => {
       if (!questions.length) {
         return res.status(404).json({
           success: false,
-          message: `The author: ${authorName} is not found`,
+          message: `The author: ${firstName} is not found`,
         });
       }
       res.status(200).json({
@@ -74,7 +74,7 @@ const getQuestionById = (req, res) => {
         });
       }
       res.status(200).json({
-        success: true,
+        success: true ,
         message: `The question ${id} `,
         question: result,
       });
