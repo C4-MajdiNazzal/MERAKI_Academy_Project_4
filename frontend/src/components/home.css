@@ -7,7 +7,14 @@
   flex-direction: column;
   background: url("../photo-1553095066-5014bc7b7f2d.jpg");
   /* background: no-repeat center center fixed; */
-  background-size: cover;
+  background-size: contain;
+  width: 1000px;
+  height: 1000px;
+  border: 2px solid;
+  color: pink;
+  resize: both;
+  overflow: scroll;
+
   /* -moz-background-size: 1000px;
   -o-background-size: 1000px;
   background-size: 1000px; */
