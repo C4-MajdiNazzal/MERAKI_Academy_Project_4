@@ -1,12 +1,17 @@
 .Home {
   display: flex;
   background-color: beige;
-  flex: 0 0 200px;
+  
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background: url("../photo-1553095066-5014bc7b7f2d.jpg");
+  /* background: no-repeat center center fixed; */
   background-size: cover;
+  /* -moz-background-size: 1000px;
+  -o-background-size: 1000px;
+  background-size: 1000px; */
+  /* background-size: cover; */
   color: aquamarine;
 }
 
@@ -15,6 +20,6 @@
 }
 
 .Links {
-    color: aquamarine;
+    color: white;
 }
 
