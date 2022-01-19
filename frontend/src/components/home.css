@@ -6,14 +6,14 @@
   align-items: center;
   flex-direction: column;
   background: url("../photo-1553095066-5014bc7b7f2d.jpg");
-  /* background: no-repeat center center fixed; */
+  background: no-repeat; 
   background-size: contain;
   width: 1400px;
   height: 1400px;
   border: 2px solid;
   color: pink;
   resize: both;
-  overflow: scroll;
+  overflow-y: hidden;
 
   /* -moz-background-size: 1000px;
   -o-background-size: 1000px;

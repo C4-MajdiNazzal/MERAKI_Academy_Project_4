@@ -5,6 +5,9 @@ import axios from "axios";
 
 import { AuthContext } from "../context/auth";
 
+import "../components/login.css"
+
+
 //===============================================================
 
 const NewQuestion = () => {
@@ -21,30 +24,31 @@ const NewQuestion = () => {
   const createNewQuestion = async (e) => {
     e.preventDefault();
     try {
-      const question = {
+      const Question = {
         title,
         question,
       };
       const result = await axios.post(
         "http://localhost:5000/questions",
-        question,
+        Question,
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }
       );
+      console.log(result);
       if (result.data.success) {
         setStatus(true);
         setMessage("The question has been created successfully");
       }
     } catch (error) {
-      if (!error.response.data.success) {
+      // if (!error.response.data.success) {
         setStatus(false);
-        setMessage(error.response.data.message);
+        // setMessage(error.response.data.message);
       }
     }
-  };
+;
 
   //===============================================================
 
@@ -57,16 +61,18 @@ const NewQuestion = () => {
   //===============================================================
   return (
     <>
+    <div className="Form">
+      
       <form onSubmit={createNewQuestion}>
         <br />
         <input
           type="text"
-          placeholder="question title here"
+          placeholder="Type question title here"
           onChange={(e) => setTitle(e.target.value)}
         />
         <br />
         <textarea
-          placeholder="question question here"
+          placeholder="Type question here"
           onChange={(e) => setQuestion(e.target.value)}
         ></textarea>
         <br />
@@ -76,8 +82,10 @@ const NewQuestion = () => {
       {status
         ? message && <div className="SuccessMessage">{message}</div>
         : message && <div className="ErrorMessage">{message}</div>}
+        </div>
+
     </>
   );
-};
+      }     
 
 export default NewQuestion;

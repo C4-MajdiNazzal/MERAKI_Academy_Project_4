@@ -6,7 +6,7 @@ import Register from "./components/register";
 import Login from "./components/login";
 import Home from "./components/home";
 import NewQuestion from "./components/Dashboard";
-// import Dashboard from "./components/dashboard";
+import Dashboard from "./components/Dashboard";
 // import NewArticle from "./components/newArticle";
 
 //===============================================================
@@ -20,7 +20,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home/>} />
         <Route path="/questions" element={<NewQuestion/>} />
-        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+        <Route path="/dashboard" element={<Dashboard />} />
         {/* <Route path="/newArticle" element={<NewArticle />} /> */}
       </Routes>
     </div>
