@@ -1,18 +1,20 @@
 .Home {
   display: flex;
   background-color: beige;
-  flex: 0 0 200px; 
-  justify-content: center; 
+  flex: 0 0 200px;
+  justify-content: center;
   align-items: center;
-  flex-direction: column; 
+  flex-direction: column;
   background: url("../photo-1553095066-5014bc7b7f2d.jpg");
-  background-size: cover
+  background-size: cover;
+  color: aquamarine;
 }
 
 .welcome {
-    color:aquamarine 
+  color: aquamarine;
 }
 
 .Links {
-    color:aquamarine 
+    color: aquamarine;
 }
+

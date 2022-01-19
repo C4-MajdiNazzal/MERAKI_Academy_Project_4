@@ -13,7 +13,7 @@ const Home = () => {
       </p>
       <p>
         {" "}
-        <Link to="/login">login</Link>{" "}
+        <Link className="Links" to="/login">login</Link>{" "}
       </p>
       </div>
     </div>
