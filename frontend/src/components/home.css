@@ -1,0 +1,18 @@
+.Home {
+  display: flex;
+  background-color: beige;
+  flex: 0 0 200px; 
+  justify-content: center; 
+  align-items: center;
+  flex-direction: column; 
+  background: url("../photo-1553095066-5014bc7b7f2d.jpg");
+  background-size: cover
+}
+
+.welcome {
+    color:aquamarine 
+}
+
+.Links {
+    color:aquamarine 
+}
