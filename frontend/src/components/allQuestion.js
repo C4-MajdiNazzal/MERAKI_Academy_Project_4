@@ -9,13 +9,33 @@ const AllQuestion = () => {
   const [userId, setUserId] = useState("");
   // const { token} = useContext(AuthContext);
   const [question, setQuestion] = useState("");
-  
+  const [answer, setAnswer] = useState("");
   const [show, setShow] = useState(false);
   const [message, setMessage] = useState("");
   //====================================================================================
   useEffect(() => {
     getAllQuestions();
   }, []);
+
+  const addAnswer = async (id) => {
+    try {
+      await axios.post(
+        `http://localhost:5000/answers/`,
+        {
+          answer,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      getAllQuestions();
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
+
   const getAllQuestions = async () => {
     try {
       const res = await axios.get("http://localhost:5000/questions", {
@@ -50,11 +70,16 @@ const AllQuestion = () => {
                 {" "}
                 <p> {element.title} </p>
                 <p> {element.question} </p>;
-                <input placeholder="write answer" />
-                <button>add answer</button>
+                
+                <input placeholder="write answer"
+                onChange={(e) => setAnswer(e.target.value)} />
+                <button  onClick={() => {
+                  addAnswer(answer._id);
+                }} >add answer</button>
               </>
             );
           })}
+          <p> {answer} </p>
       </div>
       <p>{message}</p>
     </>
