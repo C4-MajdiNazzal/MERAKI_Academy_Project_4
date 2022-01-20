@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+
 
 import axios from "axios";
 
@@ -82,6 +83,9 @@ const NewQuestion = () => {
       {status
         ? message && <div className="SuccessMessage">{message}</div>
         : message && <div className="ErrorMessage">{message}</div>}
+        <p className="Links">
+        <Link className="Links" to="/allquestions">All Questions</Link>{" "}
+      </p>
         </div>
 
     </>
