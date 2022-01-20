@@ -8,4 +8,4 @@ const questionSchema = new mongoose.Schema({
   answers: [{type: mongoose.Types.ObjectId, ref:"Answer"}]
 });
 
-module.exports = mongoose.model("question", questionSchema);
+module.exports = mongoose.model("questions", questionSchema);

@@ -5,20 +5,20 @@ const getAllQuestions = (req, res) => {
   const userId = req.token.userId;
   questionModel
     .find({})
-    .populate("questions")
-    .then((questions) => {
-      if (questions.length) {
+    .populate("question")
+    .then((question) => {
+      if (question.length) {
         res.status(200).json({
           success: true,
           message: `All the questions`,
           userId: userId,
-          questions: questions,
-          questions: questions.questions ,
+          question: question,
+          // question: question.question ,
         });
       } else {
         res.status(200).json({
           success: false,
-          message: `No questions Yet` ,
+          message: `No questions Yet`,
         });
       }
     })
@@ -27,7 +27,6 @@ const getAllQuestions = (req, res) => {
       res.status(500).json({
         success: false,
         message: `Server Error`,
-       
       });
     });
 };
@@ -70,11 +69,11 @@ const getQuestionById = (req, res) => {
       if (!result) {
         return res.status(404).json({
           success: false,
-          message: `The question not found` ,
+          message: `The question not found`,
         });
       }
       res.status(200).json({
-        success: true ,
+        success: true,
         message: `The question ${id} `,
         question: result,
       });
@@ -94,7 +93,7 @@ const createNewQuestion = (req, res) => {
     title,
     category,
     question,
-    teacher: req.token.userId ,
+    teacher: req.token.userId,
   });
 
   newquestion
@@ -102,8 +101,8 @@ const createNewQuestion = (req, res) => {
     .then((question) => {
       res.status(201).json({
         success: true,
-        message: `question created` ,
-        question: question ,
+        message: `question created`,
+        question: question,
       });
     })
     .catch((err) => {
@@ -130,7 +129,7 @@ const updateQuestionById = (req, res) => {
       res.status(202).json({
         success: true,
         message: `question updated`,
-        question: result ,
+        question: result,
       });
     })
     .catch((err) => {
@@ -175,7 +174,7 @@ const deleteQuestionsByAuthor = (req, res) => {
     .then((result) => {
       if (!result.deletedCount) {
         return res.status(404).json({
-          success: false ,
+          success: false,
           message: `The Author is not found`,
         });
       }
