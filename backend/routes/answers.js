@@ -6,6 +6,6 @@ const { createNewanswer } = require("../controllers/answer");
 // Create answer router
 const answersRouter = express.Router();
 
-answersRouter.post("/", createNewanswer);
+answersRouter.post("/:id", createNewanswer);
 
 module.exports = answersRouter;

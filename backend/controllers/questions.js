@@ -5,7 +5,7 @@ const getAllQuestions = (req, res) => {
   const userId = req.token.userId;
   questionModel
     .find({})
-    .populate("question")
+    .populate("answers")
     .then((question) => {
       if (question.length) {
         res.status(200).json({

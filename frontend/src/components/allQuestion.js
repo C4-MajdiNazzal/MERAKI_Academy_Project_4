@@ -20,7 +20,7 @@ const AllQuestion = () => {
   const addAnswer = async (id) => {
     try {
       await axios.post(
-        `http://localhost:5000/answers/`,
+        `http://localhost:5000/answers/${id}`,
         {
           answer,
         },
@@ -46,11 +46,8 @@ const AllQuestion = () => {
       console.log("res.data", res.data.question);
       if (res.data.success) {
         setQuestion(res.data.question);
-        console.log(question);
-        console.log(res.data.question);
-        // setMessage(res.data,message);
-        // setShow(true);
         setUserId(res.data.userId);
+        console.log(res.data.questionId);
       } else throw Error;
     } catch (error) {
       if (!error.response.data.success) {
@@ -69,17 +66,28 @@ const AllQuestion = () => {
               <>
                 {" "}
                 <p> {element.title} </p>
-                <p> {element.question} </p>;
-                
-                <input placeholder="write answer"
-                onChange={(e) => setAnswer(e.target.value)} />
-                <button  onClick={() => {
-                  addAnswer(answer._id);
-                }} >add answer</button>
+                <p> {element.question} </p>;<p> {element.teacher} </p>;
+                <input
+                  placeholder="write answer"
+                  onChange={(e) => setAnswer(e.target.value)}
+                />
+                <button
+                  onClick={() => {
+                    addAnswer(element._id);
+                  }}
+                >
+                  add answer
+                </button>
+                {/* <p> {element.answers[1].answer} </p>; */}
+                {/* <p> {element.answers} </p>; */}
+                <p>the answer</p>
+                {element.answers &&
+                  element.answers.map((element) => {
+                    return <p>{element.answer}</p>;
+                  })}
               </>
             );
           })}
-          <p> {answer} </p>
       </div>
       <p>{message}</p>
     </>

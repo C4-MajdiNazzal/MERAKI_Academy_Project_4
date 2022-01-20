@@ -1,7 +1,6 @@
 const answersModel = require("../database/models/answerSchema");
 const questionsModel = require("../database/models/questionSchema");
 
-
 // This function creates a new answer for a specific question
 const createNewanswer = (req, res) => {
   const questionId = req.params.id;
