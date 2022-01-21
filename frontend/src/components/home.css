@@ -1,5 +1,9 @@
 .Home {
-  display: flex;
+display: flex;
+flex-direction: column;
+padding-left: 10%;
+padding-top: 10%;
+  /* display: flex;
   background-color: beige;
   
   justify-content: center;
@@ -19,14 +23,23 @@
   -o-background-size: 1000px;
   background-size: 1000px; */
   /* background-size: cover; */
-  color: aquamarine;
+  /* color: aquamarine;  */
 }
 
 .welcome {
-  color: aquamarine;
+  /* color: aquamarine; */
 }
 
 .Links {
-    color: white;
+    /* color: white; */
 }
 
+button {
+color:blue;
+cursor: pointer;
+border-radius: 20px ;
+width: 15%;
+padding: 1%;
+
+
+}
