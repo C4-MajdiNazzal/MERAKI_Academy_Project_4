@@ -2,7 +2,8 @@
 display: flex; 
 flex-direction: row;
 padding-left: 10%;
-padding-top: 5%;
+padding-top: 3%;
+justify-content: center;
 
   /* display: flex;
   background-color: beige;
@@ -39,6 +40,8 @@ padding-top: 5%;
 
 .drawing{
   padding-right: 10% ;
+  padding-left: 20%;
+  padding-top: 2%;
 
 }
 
@@ -49,10 +52,19 @@ border-radius: 20px ;
 width: 30%;
 padding: 1%;
 font-size: 90%;
-align-items: center;
+
 }
 
-img{
-float:right;
-width: 80%
+.drawingimage { 
+width: 100% 
 }
+
+.logo {
+width: 15%;
+margin-left: 3%;
+margin-top: 1%;
+}
+
+/* img{
+  width: 100px;
+} */

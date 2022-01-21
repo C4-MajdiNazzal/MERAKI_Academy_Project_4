@@ -2,8 +2,11 @@ import { Link } from "react-router-dom";
 import "../components/home.css"
 const Home = () => {
   return (
+    <>
+    <div>
+      <img className="logo" src="https://englishplatform.uz/wp-content/uploads/2020/12/cropped-English-Platform-2-1536x422.png"/>
+    </div>
     <div className="Home">
-      
       <div className="welcome">
 
       <h1>Your English Platform</h1>
@@ -19,10 +22,11 @@ const Home = () => {
       </div>
 
       <div className="drawing">
-      <img src="https://englishplatform.uz/wp-content/uploads/2020/12/img1-1.png"/>
+      <img className="drawingimage" src="https://englishplatform.uz/wp-content/uploads/2020/12/img1-1.png"/>
       </div>
 
     </div>
+    </>
   );
 };
 
