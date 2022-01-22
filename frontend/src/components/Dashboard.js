@@ -63,7 +63,9 @@ const NewQuestion = () => {
   return (
     <>
     <div className="Form">
-      
+    <div>
+      <img className="logo" src="https://englishplatform.uz/wp-content/uploads/2020/12/cropped-English-Platform-2-1536x422.png"/>
+    </div>
       <form onSubmit={createNewQuestion}>
         <br />
         <input
@@ -72,19 +74,19 @@ const NewQuestion = () => {
           onChange={(e) => setTitle(e.target.value)}
         />
         <br />
-        <textarea
+        <textarea className="textareastyle" rows="20" cols="100"
           placeholder="Type question here"
           onChange={(e) => setQuestion(e.target.value)}
         ></textarea>
         <br />
-        <button>Create New Question</button>
+        <button >Create New Question</button>
       </form>
       <br />
       {status
         ? message && <div className="SuccessMessage">{message}</div>
         : message && <div className="ErrorMessage">{message}</div>}
         <p className="Links">
-        <Link className="Links" to="/allquestions">All Questions</Link>{" "}
+        <Link className="Links" to="/allquestions">Continue to Questions Page</Link>{" "}
       </p>
         </div>
 

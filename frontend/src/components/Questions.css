@@ -1,0 +1,22 @@
+.Questions
+{
+display: flex-box;
+border-bottom: olivedrab;
+flex-direction: column;
+justify-content: center;
+border-bottom: rgb(142, 78, 35);
+align-items: center;
+/* background: red ; */
+padding: 10%;
+padding-top: 3%;
+border: 10%;
+border-top: 3%;
+margin:10%;
+margin-top: 3%;
+
+}
+
+.Answerheader{
+    font-weight: bold;
+    text-decoration: underline;
+}

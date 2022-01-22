@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 import { AuthContext } from "../context/auth";
+import "../components/Questions.css"
 
 const AllQuestion = () => {
   const { token } = useContext(AuthContext);
@@ -58,17 +59,23 @@ const AllQuestion = () => {
   };
   return (
     <>
-      <div className="Form">
+    <div>
+      <img className="logo" src="https://englishplatform.uz/wp-content/uploads/2020/12/cropped-English-Platform-2-1536x422.png"/>
+    </div>
+      <div >
         {question &&
           question.map((element) => {
             console.log(element);
             return (
               <>
+              <div className="Questions">
                 {" "}
                 <p> {element.title} </p>
-                <p> {element.question} </p>;<p> {element.teacher} </p>;
-                <input
+                <p> {element.question} </p>
+                <textarea
                   placeholder="write answer"
+                  className="textareastyle" rows="20" cols="100"
+          placeholder="Type your answer here"
                   onChange={(e) => setAnswer(e.target.value)}
                 />
                 <button
@@ -78,16 +85,19 @@ const AllQuestion = () => {
                 >
                   add answer
                 </button>
+                
                 {/* <p> {element.answers[1].answer} </p>; */}
                 {/* <p> {element.answers} </p>; */}
-                <p>the answer</p>
+                <p className="Answerheader">Aswers</p>
                 {element.answers &&
                   element.answers.map((element) => {
-                    return <p>{element.answer}</p>;
+                    return <p>"{element.answer}"</p>;
                   })}
+                  </div>
               </>
             );
           })}
+          <br/>
       </div>
       <p>{message}</p>
     </>
