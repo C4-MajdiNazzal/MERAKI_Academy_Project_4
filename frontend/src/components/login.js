@@ -53,7 +53,10 @@ const Login = () => {
   return (
     <>
       <div className="Form">
-        <p className="Title">Login:</p>
+      <div>
+      <img className="logo" src="https://englishplatform.uz/wp-content/uploads/2020/12/cropped-English-Platform-2-1536x422.png"/>
+    </div>
+      <h3> Please fill your Login information below</h3>
         <form onSubmit={login}>
           <br />
 
@@ -69,7 +72,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <br />
-          <button>Login</button>
+          <button className="buttonregister">Login</button>
         </form>
 
         {status

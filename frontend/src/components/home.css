@@ -1,9 +1,9 @@
 .Home {
-display: flex; 
-flex-direction: row;
-padding-left: 10%;
-padding-top: 3%;
-justify-content: center;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10%;
+  padding-top: 3%;
+  justify-content: center;
 
   /* display: flex;
   background-color: beige;
@@ -34,34 +34,32 @@ justify-content: center;
 }
 
 .Links {
-    /* color: white; */
+  /* color: white; */
 }
 
-.drawing{
-  padding-right: 10% ;
+.drawing {
+  padding-right: 10%;
   padding-left: 20%;
   padding-top: 2%;
-
 }
 
 button {
-color:blue;
-cursor: pointer;
-border-radius: 20px ;
-width: 30%;
-padding: 1%;
-font-size: 90%;
-
+  color: blue;
+  cursor: pointer;
+  border-radius: 20px;
+  width: 30%;
+  padding: 1%;
+  font-size: 90%;
 }
 
-.drawingimage { 
-width: 100% 
+.drawingimage {
+  width: 100%;
 }
 
 .logo {
-width: 15%;
-margin-left: 3%;
-margin-top: 1%;
+  width: 15%;
+  margin-left: 3%;
+  margin-top: 1%;
 }
 
 /* img{

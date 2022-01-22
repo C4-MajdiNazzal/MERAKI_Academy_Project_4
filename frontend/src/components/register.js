@@ -51,7 +51,10 @@ const Register = () => {
       <div className="Form">
         {!isLoggedIn ? (
           <>
-            <p className="Title">Register:</p>
+            <div>
+      <img className="logo" src="https://englishplatform.uz/wp-content/uploads/2020/12/cropped-English-Platform-2-1536x422.png"/>
+    </div>
+    <h3> Please fill your information below</h3>
             <form onSubmit={addNewUser}>
               <br />
               <input
@@ -80,7 +83,7 @@ const Register = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
               <br />
-              <button>Register</button>
+              <button className="buttonregister">Register</button>
               <br />
             </form>
             {status
