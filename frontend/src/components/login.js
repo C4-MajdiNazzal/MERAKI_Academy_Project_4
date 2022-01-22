@@ -44,7 +44,7 @@ const Login = () => {
 
   useEffect(() => {
     if (isLoggedIn) {
-      history("/dashboard");
+      history("/addquestion");
     }
   });
 

@@ -4,6 +4,8 @@
     align-items: center;
   justify-content: center;
     padding: 2%;
+  font-family: cursive;
+
 
     
     /* display: flex;
@@ -36,6 +38,8 @@ width: 100%;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  font-family: cursive;
+
 }
 
 .buttonregister {
@@ -43,6 +47,8 @@ width: 100%;
     width: 100%;
     padding: 12px 20px;
   margin: 12px 0;
+  font-family: cursive;
+
     /* background-color: #04AA6D;
     color: white;
     padding: 14px 20px;
@@ -58,4 +64,5 @@ width: 100%;
 
   .textareastyle{
       resize:none;
+  font-family: cursive;
   }

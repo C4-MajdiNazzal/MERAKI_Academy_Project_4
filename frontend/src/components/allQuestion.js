@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth";
 import "../components/Questions.css"
 
 const AllQuestion = () => {
+  const { logout, isLoggedIn } = useContext(AuthContext)
   const { token } = useContext(AuthContext);
   const [userId, setUserId] = useState("");
   // const { token} = useContext(AuthContext);
@@ -70,7 +70,7 @@ const AllQuestion = () => {
               <>
               <div className="Questions">
                 {" "}
-                <p> {element.title} </p>
+                <h4> {element.title} </h4>
                 <p> {element.question} </p>
                 <textarea
                   placeholder="write answer"
@@ -78,6 +78,9 @@ const AllQuestion = () => {
           placeholder="Type your answer here"
                   onChange={(e) => setAnswer(e.target.value)}
                 />
+                <br/>
+                <br/>
+
                 <button
                   onClick={() => {
                     addAnswer(element._id);
@@ -88,7 +91,7 @@ const AllQuestion = () => {
                 
                 {/* <p> {element.answers[1].answer} </p>; */}
                 {/* <p> {element.answers} </p>; */}
-                <p className="Answerheader">Aswers</p>
+                <p className="Answerheader">Answers</p>
                 {element.answers &&
                   element.answers.map((element) => {
                     return <p>"{element.answer}"</p>;
@@ -98,8 +101,14 @@ const AllQuestion = () => {
             );
           })}
           <br/>
+          
       </div>
       <p>{message}</p>
+      <div className="logout">
+      <p>
+      <button className="logoutbutton" onClick={logout}>Logout</button>
+      </p>
+      </div>
     </>
   );
 };

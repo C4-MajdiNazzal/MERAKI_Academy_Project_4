@@ -55,7 +55,7 @@ const NewQuestion = () => {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      history("/dashboard");
+      history("/addquestion");
     }
   });
 
@@ -74,10 +74,12 @@ const NewQuestion = () => {
           onChange={(e) => setTitle(e.target.value)}
         />
         <br />
+        <br />
         <textarea className="textareastyle" rows="20" cols="100"
           placeholder="Type question here"
           onChange={(e) => setQuestion(e.target.value)}
         ></textarea>
+        <br />
         <br />
         <button >Create New Question</button>
       </form>

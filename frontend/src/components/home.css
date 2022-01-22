@@ -4,6 +4,7 @@
   padding-left: 10%;
   padding-top: 3%;
   justify-content: center;
+  font-family: cursive;
 
   /* display: flex;
   background-color: beige;
@@ -31,16 +32,22 @@
 .welcome {
   /* color: aquamarine; */
   padding-top: 12%;
+  font-family: cursive;
+
 }
 
 .Links {
   /* color: white; */
+  font-family: cursive;
+
 }
 
 .drawing {
   padding-right: 10%;
   padding-left: 20%;
   padding-top: 2%;
+  font-family: cursive;
+
 }
 
 button {
@@ -50,6 +57,8 @@ button {
   width: 30%;
   padding: 1%;
   font-size: 90%;
+  font-family: cursive;
+
 }
 
 .drawingimage {
